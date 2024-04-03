@@ -1,0 +1,6 @@
+.env
+.DS_Store
+.idea
+.code
+.venv
+credentials.json
