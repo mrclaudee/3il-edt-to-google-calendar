@@ -1,0 +1,8 @@
+from datetime import datetime
+
+from django.shortcuts import render
+
+
+def index(request):
+    return render(request, "sharelockr/index.html", context={"prenom": "Patrick", "date": datetime.today()})
+

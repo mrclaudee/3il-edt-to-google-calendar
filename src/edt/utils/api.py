@@ -16,7 +16,7 @@ logging.basicConfig(level=logging.INFO,
 load_dotenv()
 
 
-def extract_edt(id_groupe: str = "I1 Groupe 4 Licence"):
+def extract_edt(id_groupe: str = "I1 Groupe 4 Licence.xml"):
     """Function to return the timetable of a group in 3iL
 
     Args:
@@ -25,7 +25,7 @@ def extract_edt(id_groupe: str = "I1 Groupe 4 Licence"):
     Returns:
         list: List up to date of the subjects availablen online
     """
-    url = f"https://eleves.groupe3il.fr/edt_eleves/00_index.php?idGroupe={id_groupe}.xml"
+    url = f"https://eleves.groupe3il.fr/edt_eleves/00_index.php?idGroupe={id_groupe}"
     r = requests.get(url)
     if r.status_code != 200:
         logging.error("Unable to load the page")
@@ -39,7 +39,7 @@ def extract_edt(id_groupe: str = "I1 Groupe 4 Licence"):
         item['room'] = row.select('div.edt-data')[1].getText()
         item['time'] = row.select('div')[1].getText()
         item['date'] = row.select('div')[3].getText()
-        if (item['room'] != ''):
+        if item['room'] != '':
             items.append(item)
 
     return items

@@ -1,2 +1,5 @@
 2024-04-20 23:15:39,762 - INFO - Fetching url: https://eleves.groupe3il.fr/edt_eleves/00_index.php?idGroupe=I1 Groupe 4 Licence.xml
 2024-04-20 23:30:21,290 - INFO - Fetching url: https://eleves.groupe3il.fr/edt_eleves/00_index.php?idGroupe=I1 Groupe 4 Licence.xml
+2024-04-20 23:14:05,940 - INFO - Fetching url: https://eleves.groupe3il.fr/edt_eleves/00_index.php?idGroupe=B1 Groupe 1.xml
+2024-04-20 23:15:12,157 - INFO - /Users/fotsoclaude/Code/sharelockr/src/edt/urls.py changed, reloading.
+2024-04-20 23:15:19,718 - INFO - Fetching url: https://eleves.groupe3il.fr/edt_eleves/00_index.php?idGroupe=B1 Groupe 1.xml
