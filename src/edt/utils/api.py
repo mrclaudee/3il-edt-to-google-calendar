@@ -1,9 +1,17 @@
 from bs4 import BeautifulSoup
 from dotenv import load_dotenv
+from pathlib import Path
 import requests
 import logging
 
 from pprint import pprint
+
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
+
+logging.basicConfig(level=logging.INFO,
+                    filemode="a",
+                    filename=BASE_DIR / "logs" / "api.log",
+                    format='%(asctime)s - %(levelname)s - %(message)s')
 
 load_dotenv()
 
@@ -17,12 +25,12 @@ def extract_edt(id_groupe: str = "I1 Groupe 4 Licence"):
     Returns:
         list: List up to date of the subjects availablen online
     """
-    url = f"http://eleves.groupe3il.fr/edt_eleves/00_index.php?idGroupe={id_groupe}.xml"
+    url = f"https://eleves.groupe3il.fr/edt_eleves/00_index.php?idGroupe={id_groupe}.xml"
     r = requests.get(url)
     if r.status_code != 200:
         logging.error("Unable to load the page")
         return []
-    print(f"Fetching url: {url}")
+    logging.info(f"Fetching url: {url}")
     soup = BeautifulSoup(r.content, "html.parser")
     items = []
     for row in soup.select('div.edt-item'):
