@@ -10,7 +10,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 logging.basicConfig(level=logging.INFO,
                     filemode="a",
-                    filename=BASE_DIR / "logs" / "api.log",
+                    filename=BASE_DIR / "logs" / "app.log",
                     format='%(asctime)s - %(levelname)s - %(message)s')
 
 load_dotenv()
