@@ -7,7 +7,21 @@
     <meta name="description" content="Application permettant d'avoir son emploi de temps 3iL dans google agenda de manière synchronisée">
 </head>
 <body>
-    <h1>Bonjour {{ prenom }}, bienvenue sur mon site</h1>
-    <h2>Aujourd'hui nous sommes le {{ date }}</h2>
+    <h1>Sharelockr</h1>
+
+    <script src="https://accounts.google.com/gsi/client" async></script>
+    <div id="g_id_onload"
+        data-client_id="{{ google_id }}"
+        data-login_uri="https://sharelockr.com/"
+        data-auto_prompt="false">
+    </div>
+    <div class="g_id_signin"
+        data-type="standard"
+        data-size="large"
+        data-theme="outline"
+        data-text="sign_in_with"
+        data-shape="rectangular"
+        data-logo_alignment="left">
+    </div>
 </body>
 </html>

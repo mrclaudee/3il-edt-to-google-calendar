@@ -8,8 +8,8 @@ def login(request):
     return HttpResponse("<h2>Login from edt app.</h2>")
 
 
-def home(request):
-    return render(request, "edt/index.html")
+def edt_list(request):
+    return render(request, "edt/edt-list.html")
 
 
 def edt(request, id_groupe):
