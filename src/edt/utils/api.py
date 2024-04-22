@@ -1,5 +1,4 @@
 from bs4 import BeautifulSoup
-from dotenv import load_dotenv
 from pathlib import Path
 import requests
 import logging
@@ -12,8 +11,6 @@ logging.basicConfig(level=logging.INFO,
                     filemode="a",
                     filename=BASE_DIR / "logs" / "app.log",
                     format='%(asctime)s - %(levelname)s - %(message)s')
-
-load_dotenv()
 
 
 def extract_edt(id_groupe: str = "I1 Groupe 4 Licence.xml"):
